@@ -238,8 +238,8 @@ public class MainActivity extends AppCompatActivity {
         bper.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int val = Integer.parseInt(tvmain.getText().toString());
-                int per = val/100;
+                double val = Double.parseDouble(tvmain.getText().toString());
+                double per = val/100;
                 tvmain.setText(String.valueOf(per));
                 tvsec.setText(val + "%");
             }
