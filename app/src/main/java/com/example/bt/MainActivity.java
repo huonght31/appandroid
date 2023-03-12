@@ -1,5 +1,4 @@
-package com.example.culcaltor_app;
-
+package com.example.calculator_app;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -8,7 +7,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    Button b1, b2, b3, b4, b5, b6, b7, b8, b9, b0, bdot, bpi, bequal, bmin, bplus, bdiv, bmul, bminus, blog, bac, bc, bb1, bb2, bln, bsin, bcos, btan, binv, bsqrt, bsquare, bper;
+    Button b1, b2, b3, b4, b5, b6, b7, b8, b9, b0, bdot, bpi, bequal, bmin, bplus, bdiv, bmul, bminus, bac, bc, bb1, bb2, bsin, bcos, btan, binv, bsqrt, bsquare, bper;
     TextView tvsec, tvmain;
     String pi = "3.14159265";
 
@@ -16,7 +15,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         b1 = findViewById(R.id.b1);
         b2 = findViewById(R.id.b2);
         b3 = findViewById(R.id.b3);
@@ -42,11 +40,10 @@ public class MainActivity extends AppCompatActivity {
         bsqrt = findViewById(R.id.bsqrt);
         bsquare = findViewById(R.id.bsquare);
         bper = findViewById(R.id.bper);
-        bln = findViewById(R.id.bln);
         bsin = findViewById(R.id.bsin);
         bcos = findViewById(R.id.bcos);
         btan = findViewById(R.id.btan);
-        blog = findViewById(R.id.blog);
+
 
         tvmain = findViewById(R.id.tvmain);
         tvsec = findViewById(R.id.tvsec);
@@ -256,19 +253,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        bln.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                tvmain.setText(tvmain.getText() + "ln");
-            }
-        });
-
-        blog.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                tvmain.setText(tvmain.getText() + "log");
-            }
-        });
 
         bequal.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -359,8 +343,6 @@ public class MainActivity extends AppCompatActivity {
                     else if (func.equals("sin")) x = Math.sin(Math.toRadians(x));
                     else if (func.equals("cos")) x = Math.cos(Math.toRadians(x));
                     else if (func.equals("tan")) x = Math.tan(Math.toRadians(x));
-                    else if (func.equals("log")) x = Math.log10(x);
-                    else if (func.equals("ln")) x = Math.log(x);
                     else throw new RuntimeException("Unknown function: " + func);
 
                 } else {
